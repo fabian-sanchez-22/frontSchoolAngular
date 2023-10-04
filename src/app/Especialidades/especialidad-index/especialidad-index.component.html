@@ -1,0 +1,14 @@
+<button (click)="new()">Nuevo</button>
+
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Nombres</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listEspecialidades">
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombre }}</td>
+        </tr>
+    </tbody>
+</table>
