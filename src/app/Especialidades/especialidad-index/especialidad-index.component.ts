@@ -14,21 +14,37 @@ export class EspecialidadIndexComponent implements OnInit {
   constructor(private service: EspecialidadService, private router: Router) { }
 
   ngOnInit(): void {
+    this.obtenerEspecialidades();
+  }
+  
+  obtenerEspecialidades(){
     this.service.obtenerEspecialidades().subscribe(
       result => {
-      this.listEspecialidades = result.data
-      console.log(this.listEspecialidades);
-      
+        this.listEspecialidades = result.data
+        console.log(this.listEspecialidades);
+
       },
       error => {
-      console.log(error);
+        console.log(error);
       }
     )
   }
 
+  new() {
+    this.router.navigateByUrl("/especialidades/nuevo");
+  }
 
-  new(){
-  this.router.navigateByUrl("/especialidades/nuevo");
+  edit(id: any) {
+    this.router.navigateByUrl(`/especialidades/editar/${id}`);
+  }
+
+  deletes(id: any) {
+    this.service.deletes(id).subscribe(
+      result => {
+      alert("Se ha eliminado el registro")
+      this.obtenerEspecialidades();
+      }
+      )
   }
 
 }

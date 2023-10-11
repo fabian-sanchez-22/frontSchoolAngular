@@ -1,6 +1,10 @@
-<form>
+<form [formGroup]="frmEspecialidad">
 
     <label for="">Especialidad</label>
-    <input type="text" placeholder="Ingrese la especialidad" >
-    <button (click)="guardar()"></button> 
+    <input type="text" 
+    placeholder="Ingrese la especialidad"
+    formControlName="nombre" >
+    <button (click)="guardar()">Guardar</button> 
+    <br>
+    <button [routerLink]="['/especialidades']">Volver</button>
 </form>

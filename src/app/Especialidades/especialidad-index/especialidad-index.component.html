@@ -3,12 +3,17 @@
 <table>
     <thead>
         <th>ID</th>
-        <th>Nombres</th>
+        <th>Nombre</th>
+        <th>Acciones</th>
     </thead>
     <tbody>
         <tr *ngFor="let item of listEspecialidades">
             <td>{{ item.id }}</td>
             <td>{{ item.nombre }}</td>
+            <td>
+                <button (click)="edit(item.id)">Modificar</button>
+                <button (click)="deletes(item.id)">Eliminar</button>
+            </td>
         </tr>
     </tbody>
 </table>

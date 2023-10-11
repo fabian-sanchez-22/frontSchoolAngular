@@ -5,7 +5,9 @@ import { EspecialidadFormComponent } from './Especialidades/especialidad-form/es
 
 const routes: Routes = [
 {path: 'especialidades', component: EspecialidadIndexComponent},
-{path: 'especialidades/nuevo', component: EspecialidadFormComponent}
+{path: 'especialidades/nuevo', component: EspecialidadFormComponent},
+{path: 'especialidades/editar/:id', component: EspecialidadFormComponent},
+{path: 'especialidades/eliminar/:id', component: EspecialidadFormComponent}
 ];
 
 @NgModule({
