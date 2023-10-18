@@ -1,10 +1,16 @@
-<form [formGroup]="frmEspecialidad">
+<div class="container">
+    <h2 class="mt-4 mb-4">Especialidades</h2>
 
-    <label for="">Especialidad</label>
-    <input type="text" 
-    placeholder="Ingrese la especialidad"
-    formControlName="nombre" >
-    <button (click)="guardar()">Guardar</button> 
-    <br>
-    <button [routerLink]="['/especialidades']">Volver</button>
-</form>
+    <form [formGroup]="frmEspecialidad">
+        <div class="form-group">
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese la especialidad"
+                formControlName="nombre">
+        </div>
+
+        <button class="btn btn-success mb-3 mt-2" (click)="guardar()">Guardar</button>
+
+        <br>
+
+        <button class="btn btn-secondary" [routerLink]="['/especialidades']">Volver</button>
+    </form>
+</div>
