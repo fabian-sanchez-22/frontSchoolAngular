@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { DatatableParameter } from '../utils/datatable-parameter';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,9 @@ export class EspecialidadService {
 
   constructor(private http: HttpClient) { }
 
+  obtenerDatatable(datatableParameter: DatatableParameter){
+  return this.http.get<any>(`${this.urlBase}/datatable?page=${datatableParameter.page}&size=${datatableParameter.size}&column_order=${datatableParameter.column_order}&column_direction=${datatableParameter.column_direction}}`);
+  }
 
   obtenerEspecialidades() {
     return this.http.get<any>(this.urlBase, { headers: this.headers });

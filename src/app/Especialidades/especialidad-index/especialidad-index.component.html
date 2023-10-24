@@ -1,7 +1,14 @@
 <div class="container">
     <h2 class="mt-4 mb-4">Especialidades</h2>
 
-    <table class="table table-bordered table-hover">
+
+    <table datatable 
+    [dtOptions]="optionsDatatable" 
+    [dtTrigger]="dtTrigger"
+    class="display compact responsive w-100 table table-striped table-bordered">
+            </table>
+
+    <!-- <table class="table table-bordered table-hover">
         <thead class="thead-light">
             <tr>
                 <th>ID</th>
@@ -19,6 +26,6 @@
                 </td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
     <button class="btn btn-success mb-3" (click)="new()">Agregar nueva especialidad</button>
 </div>
