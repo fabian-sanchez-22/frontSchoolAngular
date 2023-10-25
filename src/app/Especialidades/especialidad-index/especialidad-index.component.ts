@@ -13,7 +13,7 @@ import { DatatableParameter } from 'src/app/utils/datatable-parameter';
 })
 export class EspecialidadIndexComponent implements OnInit {
 @ViewChild(DataTableDirective) dtElement: DataTableDirective | undefined;
-public optionsDatatable: any = {};
+public optionsDatatable: DataTables.Settings = {};
 public dtTrigger: Subject<any> = new Subject();
 
 private _datatableParameter: DatatableParameter = {} as DatatableParameter;

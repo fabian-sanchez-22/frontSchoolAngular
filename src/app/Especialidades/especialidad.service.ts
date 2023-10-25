@@ -13,7 +13,7 @@ export class EspecialidadService {
   constructor(private http: HttpClient) { }
 
   obtenerDatatable(datatableParameter: DatatableParameter){
-  return this.http.get<any>(`${this.urlBase}/datatable?page=${datatableParameter.page}&size=${datatableParameter.size}&column_order=${datatableParameter.column_order}&column_direction=${datatableParameter.column_direction}}`);
+  return this.http.get<any>(`${this.urlBase}/datatable?page=${datatableParameter.page}&size=${datatableParameter.size}&column_order=${datatableParameter.column_order}&column_direction=${datatableParameter.column_direction}&search=${datatableParameter.search}`);
   }
 
   obtenerEspecialidades() {
